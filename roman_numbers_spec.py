@@ -1,19 +1,23 @@
 from mamba import describe, context, it
 from expects import expect, equal
 
+map = [
+    (1000, "M"),
+    (100, "C"),
+    (50, "L"),
+    (10, "X"),
+    (5, "V"),
+]
+
 
 def to_roman(number):
     if number <= 3:
         return "I" * number
     if number == 4:
         return "IV"
-    if number >= 100:
-        return "C" + to_roman(number - 100)
-    if number >= 50:
-        return "L" + to_roman(number - 50)
-    if number >= 10:
-        return "X" + to_roman(number - 10)
-    return "V" + to_roman(number - 5)
+    for key, value in map:
+        if number >= key:
+            return value + to_roman(number - key)
 
 
 with describe("Roman numbers"):
