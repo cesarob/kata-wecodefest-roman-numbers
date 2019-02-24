@@ -7,7 +7,9 @@ def to_roman(number):
         return "I"
     if number == 2:
         return "II"
-    return "III"
+    if number == 3:
+        return "III"
+    return "V"
 
 
 with describe("Roman numbers"):
@@ -23,6 +25,8 @@ with describe("Roman numbers"):
         with it("converts 3 to III"):
             expect(to_roman(3)).to(equal("III"))
 
-        # with it ("converts 5 to V"):
+        with it("converts 5 to V"):
+            expect(to_roman(5)).to(equal("V"))
+
         # with it ("converts 6 to VI"):
         # with it ("converts 7 to VII"):
