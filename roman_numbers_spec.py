@@ -7,6 +7,8 @@ def to_roman(number):
         return "I" * number
     if number == 4:
         return "IV"
+    if number == 10:
+        return "X"
     return "V" + to_roman(number - 5)
 
 
@@ -31,3 +33,7 @@ with describe("Roman numbers"):
 
         with it("converts 4 to IV"):
             expect(to_roman(4)).to(equal("IV"))
+
+    with context("two digit numbers"):
+        with it("converts 10 to X"):
+            expect(to_roman(10)).to(equal("X"))
