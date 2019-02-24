@@ -7,6 +7,8 @@ def to_roman(number):
         return "I" * number
     if number == 4:
         return "IV"
+    if number >= 50:
+        return "L" + to_roman(number - 50)
     if number >= 10:
         return "X" + to_roman(number - 10)
     return "V" + to_roman(number - 5)
@@ -40,3 +42,9 @@ with describe("Roman numbers"):
 
         with it("converts 11 to XI"):
             expect(to_roman(11)).to(equal("XI"))
+
+        with it("converts 50 to L"):
+            expect(to_roman(50)).to(equal("L"))
+
+        with it("converts 51 to LI"):
+            expect(to_roman(51)).to(equal("LI"))
