@@ -3,13 +3,9 @@ from expects import expect, equal
 
 
 def to_roman(number):
-    if number == 1:
-        return "I"
-    if number == 2:
-        return "II"
-    if number == 3:
-        return "III"
-    return "V"
+    if number <= 3:
+        return "I" * number
+    return "V" + to_roman(number - 5)
 
 
 with describe("Roman numbers"):
@@ -28,5 +24,7 @@ with describe("Roman numbers"):
         with it("converts 5 to V"):
             expect(to_roman(5)).to(equal("V"))
 
-        # with it ("converts 6 to VI"):
+        with it("converts 6 to VI"):
+            expect(to_roman(6)).to(equal("VI"))
+
         # with it ("converts 7 to VII"):
