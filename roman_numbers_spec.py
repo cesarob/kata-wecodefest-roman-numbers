@@ -14,7 +14,11 @@ def to_roman(number):
     if number <= 3:
         return "I" * number
     if number == 4:
-        return "IV"
+        return "I" + to_roman(number + 1)
+    if number == 40:
+        return "X" + to_roman(number + 10)
+    if number == 90:
+        return "X" + to_roman(number + 10)
     for key, value in map:
         if number >= key:
             return value + to_roman(number - key)
@@ -61,6 +65,12 @@ with describe("Roman numbers"):
         with it("converts 61 to LXI"):
             expect(to_roman(61)).to(equal("LXI"))
 
+        with it("converts 40 to XL"):
+            expect(to_roman(40)).to(equal("XL"))
+
     with context("three digit numbers"):
         with it("converts 100 to C"):
             expect(to_roman(100)).to(equal("C"))
+
+        with it("converts 90 to XC"):
+            expect(to_roman(90)).to(equal("XC"))
