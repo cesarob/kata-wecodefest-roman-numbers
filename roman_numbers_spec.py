@@ -48,3 +48,9 @@ with describe("Roman numbers"):
 
         with it("converts 51 to LI"):
             expect(to_roman(51)).to(equal("LI"))
+
+        with it("converts 60 to LX"):
+            expect(to_roman(60)).to(equal("LX"))
+
+        with it("converts 61 to LXI"):
+            expect(to_roman(61)).to(equal("LXI"))
