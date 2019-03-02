@@ -72,9 +72,6 @@ with describe("Roman numbers"):
         with it("converts 90 to XC"):
             expect(to_roman(90)).to(equal("XC"))
 
-        with it("converts 99 to XCIX"):
-            expect(to_roman(99)).to(equal("XCIX"))
-
     with context("three digit numbers"):
         with it("converts 100 to C"):
             expect(to_roman(100)).to(equal("C"))
@@ -91,3 +88,7 @@ with describe("Roman numbers"):
     with context("4 digit numbers"):
         with it("converts 1000 to M"):
             expect(to_roman(1000)).to(equal("M"))
+
+    with context("more than one substraction"):
+        with it("converts 99 to XCIX"):
+            expect(to_roman(99)).to(equal("XCIX"))
