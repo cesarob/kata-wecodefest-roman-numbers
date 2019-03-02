@@ -68,5 +68,5 @@ with describe("Roman numbers"):
             expect(to_roman(1000)).to(equal("M"))
 
     with context("more than one substraction"):
-        with _it("converts 99 to XCIX"):
+        with it("converts 99 to XCIX"):
             expect(to_roman(99)).to(equal("XCIX"))
