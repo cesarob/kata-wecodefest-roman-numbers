@@ -3,6 +3,7 @@ from expects import expect, equal
 
 map = [
     (1000, "M"),
+    (500, "D"),
     (100, "C"),
     (50, "L"),
     (10, "X"),
@@ -68,9 +69,12 @@ with describe("Roman numbers"):
         with it("converts 40 to XL"):
             expect(to_roman(40)).to(equal("XL"))
 
+        with it("converts 90 to XC"):
+            expect(to_roman(90)).to(equal("XC"))
+
     with context("three digit numbers"):
         with it("converts 100 to C"):
             expect(to_roman(100)).to(equal("C"))
 
-        with it("converts 90 to XC"):
-            expect(to_roman(90)).to(equal("XC"))
+        with it("converts 500 to C"):
+            expect(to_roman(500)).to(equal("D"))
