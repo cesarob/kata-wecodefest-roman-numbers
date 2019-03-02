@@ -1,30 +1,28 @@
 from mamba import describe, context, it
 from expects import expect, equal
 
-map = [
-    (1000, "M"),
-    (500, "D"),
-    (100, "C"),
-    (50, "L"),
-    (10, "X"),
-    (5, "V"),
-]
+map = {
+    1000: "M",
+    500: "D",
+    100: "C",
+    50: "L",
+    10: "X",
+    5: "V",
+    1: "I"
+}
+
+substractors = [1, 10, 100]
 
 
 def to_roman(number):
     if number <= 3:
         return "I" * number
-    if number == 4:
-        return "I" + to_roman(number + 1)
-    if number == 40:
-        return "X" + to_roman(number + 10)
-    if number == 90:
-        return "X" + to_roman(number + 10)
-    if number == 400:
-        return "C" + to_roman(number + 100)
-    for key, value in map:
+    for key, value in map.items():
         if number >= key:
             return value + to_roman(number - key)
+        for sub in substractors:
+            if number + sub == key:
+                return map[sub] + to_roman(number + sub)
 
 
 with describe("Roman numbers"):
