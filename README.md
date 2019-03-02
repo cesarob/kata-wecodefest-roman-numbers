@@ -15,3 +15,9 @@ I have created the branch [by-myself](https://github.com/cesarob/kata-wecodefest
 ## Final solution
 I checked [this one](https://github.com/SteffenBauer/Katas/tree/master/Exercism.io/python/roman-numerals), and I iterated mine in order to match it. I don't like to have hardcoded the roman values
 for 4, 9, 40, 90, 400 and 900 but it works.
+
+## To be continue...
+More stuff can be done:
+- Do the inverse operation (from roman to decimal)
+- Avoid recursion
+- Implement a solution with the special decinals hardcoded (4, 9, ...)
