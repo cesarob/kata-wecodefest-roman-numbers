@@ -15,13 +15,13 @@ MAP = [
 ]
 
 
-def to_roman(number, map=MAP):
+def to_roman(number, result='', map=MAP):
     if len(map) == 0:
-        return ''
+        return result
     decimal, roman = map[0]
     if number > decimal:
-        return roman + to_roman(number - decimal, map)
+        return to_roman(number - decimal, result + roman, map)
     elif number == decimal:
-        return roman
+        return result + roman
     else:
-        return to_roman(number, map[1:])
+        return to_roman(number, result, map[1:])
