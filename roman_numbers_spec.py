@@ -11,7 +11,7 @@ map = {
     1: "I"
 }
 
-substractors = [1, 10, 100]
+substractors = [100, 10, 1]
 
 
 def to_roman(number):
@@ -72,12 +72,18 @@ with describe("Roman numbers"):
         with it("converts 90 to XC"):
             expect(to_roman(90)).to(equal("XC"))
 
+        with it("converts 99 to XCIX"):
+            expect(to_roman(99)).to(equal("XCIX"))
+
     with context("three digit numbers"):
         with it("converts 100 to C"):
             expect(to_roman(100)).to(equal("C"))
 
         with it("converts 500 to C"):
             expect(to_roman(500)).to(equal("D"))
+
+        with it("converts 400 to CD"):
+            expect(to_roman(400)).to(equal("CD"))
 
         with it("converts 400 to CD"):
             expect(to_roman(400)).to(equal("CD"))
