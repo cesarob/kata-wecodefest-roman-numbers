@@ -15,8 +15,8 @@ substractors = [1, 10, 100]
 
 
 def to_roman(number):
-    if number <= 3:
-        return "I" * number
+    if number == 0:
+        return ''
     for key, value in map.items():
         if number >= key:
             return value + to_roman(number - key)
