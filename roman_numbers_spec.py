@@ -20,6 +20,8 @@ def to_roman(number):
         return "X" + to_roman(number + 10)
     if number == 90:
         return "X" + to_roman(number + 10)
+    if number == 400:
+        return "C" + to_roman(number + 100)
     for key, value in map:
         if number >= key:
             return value + to_roman(number - key)
@@ -78,6 +80,9 @@ with describe("Roman numbers"):
 
         with it("converts 500 to C"):
             expect(to_roman(500)).to(equal("D"))
+
+        with it("converts 400 to CD"):
+            expect(to_roman(400)).to(equal("CD"))
 
     with context("4 digit numbers"):
         with it("converts 1000 to M"):
