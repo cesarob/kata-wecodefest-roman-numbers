@@ -78,3 +78,7 @@ with describe("Roman numbers"):
 
         with it("converts 500 to C"):
             expect(to_roman(500)).to(equal("D"))
+
+    with context("4 digit numbers"):
+        with it("converts 1000 to M"):
+            expect(to_roman(1000)).to(equal("M"))
